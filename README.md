@@ -4,14 +4,14 @@ university-list-app
 
 # Application local setup
 
-npm install
-npm start
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+npm install<br/>
+npm start<br/>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.<br/>
 
 ### login details
 
-loginId : pooja.agarwal@gmail.com
-password : Pooja@123
+loginId : pooja.agarwal@gmail.com<br/>
+password : Pooja@123<br/>
 
 ### Application Routes
 
