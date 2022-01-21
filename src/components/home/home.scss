@@ -1,0 +1,12 @@
+.home-details {
+  .carousel .slide img {
+    height: 750px;
+  }
+  .card-component-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 40px;
+    flex-wrap: wrap;
+  }
+}

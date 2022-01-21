@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginForm from './components/loginForm/LoginForm';
 import RegisterForm from './components/loginForm/RegisterForm';
 import ErrorHandleComponent from './components/errorHandleComponent/ErrorHandleComponent';
+import Home from './components/home/Home';
+import { Provider } from 'react-redux';
+import Store from './store/Store';
 
 function App() {
   const urlPath = window.location.pathname;
@@ -12,18 +15,21 @@ function App() {
   }
   return (
     <div className="App">
-      <BrowserRouter>
-        {isFlag === 1 ? (
-          <Routes>
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/register" element={<RegisterForm />} />
-          </Routes>
-        ) : (
-          <Routes>
-            <Route path={urlPath} element={<ErrorHandleComponent />} />
-          </Routes>
-        )}
-      </BrowserRouter>
+      <Provider store={Store}>
+        <BrowserRouter>
+          {isFlag === 1 ? (
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<LoginForm />} />
+              <Route path="/register" element={<RegisterForm />} />
+            </Routes>
+          ) : (
+            <Routes>
+              <Route path={urlPath} element={<ErrorHandleComponent />} />
+            </Routes>
+          )}
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 }

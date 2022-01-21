@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import loginImage from '../../assets/assets-login.png';
-import { School } from '@mui/icons-material';
 import InputComponent from '../../common-components/InputComponent';
 import { useNavigate } from 'react-router-dom';
+import HeaderComponent from '../../common-components/HeaderComponent';
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -23,7 +23,20 @@ export default function LoginForm() {
   };
 
   //Login Click
-  const onLoginClick = () => {};
+  const onLoginClick = () => {
+    const isEmailValid = loginDetails.loginId.length > 0 && loginDetails.loginId === 'pooja.agarwal@gmail.com';
+    const isPassValid = loginDetails.password.length > 0 && loginDetails.password === 'Pooja@123';
+
+    if (isEmailValid && isPassValid) {
+      navigate('/', { state: { name: 'Pooja Agarwal' } });
+    } else {
+      setLoginDetailsError(prevState => ({
+        ...prevState,
+        loginIdError: !isEmailValid ? 'Please enter valid email' : '',
+        passwordError: !isPassValid ? 'Please enter valid password' : '',
+      }));
+    }
+  };
 
   const onRegisterClick = () => {
     navigate('/register');
@@ -31,10 +44,7 @@ export default function LoginForm() {
 
   return (
     <div className="university-login-details">
-      <div className="university-heading">
-        <School className="university-icon" />
-        <h2 className="university-text">University Domain</h2>
-      </div>
+      <HeaderComponent />
       <div className="university-image-form">
         <img src={loginImage} className="university-login-img" alt="loginImage" />
         <div className="login-details-form">

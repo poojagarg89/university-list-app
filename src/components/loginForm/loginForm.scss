@@ -2,22 +2,6 @@
   overflow-x: hidden;
   overflow-y: hidden;
 
-  .university-heading {
-    display: flex;
-    margin: 25px 40px;
-    align-items: center;
-    .university-text {
-      margin: 0;
-      padding-left: 10px;
-      color: blue;
-      font-size: 28px;
-    }
-
-    .university-icon {
-      color: blue;
-      font-size: 60px;
-    }
-  }
   .university-image-form {
     display: flex;
     .university-login-img {
@@ -72,7 +56,6 @@
       .loginId-input,
       .password-input {
         width: 300px;
-        margin-bottom: 20px;
       }
     }
     .login-here-text {

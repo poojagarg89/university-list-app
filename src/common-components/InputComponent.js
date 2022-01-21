@@ -30,7 +30,9 @@ export default function InputComponent({
         type={inputType ? inputType : 'text'}
         className={inputClass}
       />
-      {errorMsg && <FormHelperText style={{ color: 'red', fontSize: '12px' }}>{errorMsg}</FormHelperText>}
+      {errorMsg && (
+        <FormHelperText style={{ color: 'red', fontSize: '12px', margin: '0 60px 10px' }}>{errorMsg}</FormHelperText>
+      )}
     </div>
   );
 }
