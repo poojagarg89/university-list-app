@@ -13,6 +13,4 @@ const columnHeader = [
   },
 ];
 
-export default {
-  columnHeader,
-};
+export default columnHeader;

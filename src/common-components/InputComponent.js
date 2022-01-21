@@ -12,6 +12,7 @@ export default function InputComponent({
   defaultText,
   inputType,
   inputClass,
+  errorClass,
 }) {
   const handleChange = event => {
     onInputChange(event);
@@ -31,7 +32,9 @@ export default function InputComponent({
         className={inputClass}
       />
       {errorMsg && (
-        <FormHelperText style={{ color: 'red', fontSize: '12px', margin: '0 60px 10px' }}>{errorMsg}</FormHelperText>
+        <FormHelperText style={{ color: 'red', fontSize: '14px' }} className={errorClass}>
+          {errorMsg}
+        </FormHelperText>
       )}
     </div>
   );

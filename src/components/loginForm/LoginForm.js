@@ -62,6 +62,7 @@ export default function LoginForm() {
             variant="outlined"
             errorMsg={loginDetailsError.loginIdError}
             inputClass="loginId-input"
+            errorClass="login-error-msg"
           />
 
           <InputComponent
@@ -73,6 +74,7 @@ export default function LoginForm() {
             errorMsg={loginDetailsError.passwordError}
             inputType="password"
             inputClass="password-input"
+            errorClass="login-error-msg"
           />
 
           <button className="login-button" onClick={onLoginClick}>

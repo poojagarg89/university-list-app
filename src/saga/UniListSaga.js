@@ -1,11 +1,11 @@
 import { takeLatest, call, put } from 'redux-saga/effects';
 
 import * as types from '../action/actionTypes';
-import api from '../api/api';
+import getUniversityDetails from '../api/api';
 
 function* UniListSaga(action) {
   try {
-    const uniDetails = yield call(api.getUniversityDetails);
+    const uniDetails = yield call(getUniversityDetails);
     yield put({
       type: types.UNIVERSITY_LIST_SUCCESS,
       universityDetails: uniDetails.data,

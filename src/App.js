@@ -6,6 +6,7 @@ import ErrorHandleComponent from './components/errorHandleComponent/ErrorHandleC
 import Home from './components/home/Home';
 import { Provider } from 'react-redux';
 import Store from './store/Store';
+import SubscriptionComponent from './components/subscription/SubscriptionComponent';
 
 function App() {
   const urlPath = window.location.pathname;
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<LoginForm />} />
               <Route path="/register" element={<RegisterForm />} />
+              <Route path="/subscription" element={<SubscriptionComponent />} />
             </Routes>
           ) : (
             <Routes>
